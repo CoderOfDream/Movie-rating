@@ -1,0 +1,571 @@
+@font-face {
+  font-family: "Roboto_Condensed_Bold";
+  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf");
+}
+
+@font-face {
+  font-family: "RobotoCondensed-Bold_Italic";
+  src: url("../fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "RobotoCondensed-Italic";
+  src: url("../fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf");
+}
+
+@font-face {
+  font-family: "FontsFree-Net-Proxima-Nova-Bold";
+  src: url("../fonts/FontsFree-Net-Proxima-Nova-Bold.otf");
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "GothamBold";
+  src: url("../fonts/Gotham Bold/Gotham Bold.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list {
+  height: 660px !important;
+}
+
+.slick-list .slick-track {
+  margin-top: 690px;
+}
+
+.container {
+  width: 1366px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 115px;
+  margin: 0 auto;
+}
+
+.change-films {
+  height: 65px;
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto_Condensed_Bold', sans-serif;
+}
+
+.change-films .container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.change-films .container p {
+  color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 30px;
+}
+
+.change-films .container .change-img {
+  margin-left: 50px;
+}
+
+.change-films .container .change-img img {
+  height: 20px;
+  width: 40px;
+}
+
+.change-films .container .change-img img:nth-child(2) {
+  margin-left: 22px;
+}
+
+.change-films button {
+  width: 133px;
+  border: 2px solid white;
+  background: #010b13;
+  border-radius: 10px;
+  height: 36px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 24px;
+  font-size: 21px;
+}
+
+body header {
+  font-family: 'Roboto_Condensed_Bold', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  background: #389ef2;
+}
+
+body header .container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header .container div:nth-child(3) p, body header .container div:nth-child(4) p, body header .container div:nth-child(5) p {
+  margin-left: 10px;
+}
+
+body header .container .logo {
+  color: white;
+  height: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header .container .logo img {
+  height: 33px;
+  width: 25px;
+}
+
+body header .container .logo p {
+  font-family: 'RobotoCondensed-Bold_Italic', sans-serif;
+  font-size: 25px;
+  margin-left: 13px;
+  padding-right: 12px;
+}
+
+body header .container .logo::after {
+  content: '';
+  height: 38px;
+  width: 2px;
+  background: #ffc107;
+}
+
+body header .container .headline {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  color: white;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+body header .container .about, body header .container .sign-up, body header .container .log-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+body header .container .about .header-img, body header .container .sign-up .header-img, body header .container .log-in .header-img {
+  width: 26px;
+  height: 26px;
+  margin-left: 45px;
+}
+
+body main {
+  height: 560px;
+  background: url("../img/mainbg.png");
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main h1 {
+  text-align: center;
+  margin-top: 130px;
+  color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-family: 'RobotoCondensed-Italic', sans-serif;
+  font-size: 122px;
+}
+
+body main .container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .movies-section {
+  height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .movies-section .list-films {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body .movies-section .list-films .card {
+  padding-top: 10px;
+  width: 225px;
+  margin-right: 120px;
+}
+
+body .movies-section .list-films .card h3 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+body .movies-section .list-films .card .date {
+  margin-bottom: 10px;
+}
+
+body .movies-section .list-films .card .video {
+  padding: 7px 9px 0 9px;
+  cursor: pointer;
+  background-size: cover !important;
+  background-blend-mode: darken;
+  height: 330px;
+  width: 207px;
+}
+
+body .movies-section .list-films .card .video .video-top-btns {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .movies-section .list-films .card .video .video-top-btns .left-img {
+  width: 40px;
+  height: 30px;
+}
+
+body .movies-section .list-films .card .video .video-top-btns .right-img {
+  width: 35px;
+  height: 38px;
+}
+
+body .movies-section .list-films .card .video .play-btn {
+  margin: 110px auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .movies-section .list-films .card .video .play-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+body .movies-section .list-films .card .card-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  position: relative;
+}
+
+body .movies-section .list-films .card .card-nav .share {
+  margin-left: 10px;
+  margin-top: 33px;
+  margin-right: 26px;
+  position: absolute;
+}
+
+body .movies-section .list-films .card .card-nav .gradeless, body .movies-section .list-films .card .card-nav .comments, body .movies-section .list-films .card .card-nav .like {
+  font-family: 'FontsFree-Net-Proxima-Nova-Bold', sans-serif;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+}
+
+body .movies-section .list-films .card .card-nav .comments {
+  left: 63px;
+}
+
+body .movies-section .list-films .card .card-nav .gradeless {
+  left: 115px;
+}
+
+body .movies-section .list-films .card .card-nav .like {
+  left: 172px;
+}
+
+body .movies-section .list-films .card .card-nav .gradeless img, body .movies-section .list-films .card .card-nav .comments img, body .movies-section .list-films .card .card-nav .like img {
+  margin-top: 10px;
+}
+
+body .movies-section .list-films .card .card-nav img {
+  width: 20px;
+  height: 20px;
+}
+
+body .list-view {
+  height: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .list-view .container .arrows {
+  height: 600px;
+  margin-left: auto;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .list-view .container .arrows img {
+  width: 26px;
+  height: 9px;
+  cursor: pointer;
+}
+
+body .list-view .container .arrows img:nth-child(2) {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+body .list-view .container .items {
+  margin-top: 40px;
+}
+
+body .list-view .container .items .list-view-item {
+  height: 172px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 55px;
+}
+
+body .list-view .container .items .list-view-item .prev-img {
+  cursor: pointer;
+  background-size: cover;
+  height: 155px;
+  width: 105px;
+}
+
+body .list-view .container .items .list-view-item .prev-img .play-btn {
+  margin: 45px auto 0 auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #0b1922;
+  opacity: 0.3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .list-view .container .items .list-view-item .prev-img .play-btn img {
+  width: 23px;
+  height: 23px;
+}
+
+body .list-view .container .items .list-view-item .rating {
+  width: 125px;
+  height: 155px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+body .list-view .container .items .list-view-item .rating .circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 12px solid #22ca71;
+}
+
+body .list-view .container .items .list-view-item .rating img {
+  width: 80px;
+  height: 80px;
+}
+
+body .list-view .container .items .list-view-item .rating .rank {
+  position: absolute;
+  font-family: "GothamBold";
+  font-size: 28px;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info {
+  font-family: 'Roboto_Condensed_Bold', sans-serif;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .film-name {
+  color: #389ef2;
+  font-size: 16px;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .details p:nth-child(1) {
+  padding-left: 0;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .description {
+  font-size: 18px;
+  font-family: "Roboto-Regular";
+  color: #4b555d;
+  margin-top: 15px;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .description p {
+  width: 850px;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .item-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 60px;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .item-nav .share {
+  margin-right: 45px;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .item-nav .gradeless, body .list-view .container .items .list-view-item .list-view-item-info .item-nav .comments, body .list-view .container .items .list-view-item .list-view-item-info .item-nav .like {
+  margin-right: 35px;
+  font-family: 'FontsFree-Net-Proxima-Nova-Bold', sans-serifs;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .item-nav .like {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .item-nav .gradeless img, body .list-view .container .items .list-view-item .list-view-item-info .item-nav .comments img, body .list-view .container .items .list-view-item .list-view-item-info .item-nav .like img {
+  margin-left: 8px;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .item-nav img {
+  width: 20px;
+  height: 20px;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .read-more {
+  color: #389ef2;
+  font-size: 18px;
+}
+
+body footer {
+  color: white;
+  font-family: "RobotoCondensed-Italic";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 180px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #010b13;
+}
+
+body footer h3 {
+  margin-top: 36px;
+  font-family: "RobotoCondensed-Bold_Italic";
+  font-size: 28px;
+}
+
+body footer .info-footer {
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 18px;
+}
+
+body footer .copyright {
+  font-size: 18px;
+}
+/*# sourceMappingURL=main.css.map */

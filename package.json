@@ -1,0 +1,9 @@
+{
+  "name": "verstka",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "parcel": "^1.12.3"
+  }
+}

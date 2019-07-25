@@ -1,0 +1,316 @@
+//fonts
+@font-face
+    font-family: "Roboto_Condensed_Bold"
+    src : url("../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf")
+@font-face
+    font-family: "RobotoCondensed-Bold_Italic"
+    src : url("../fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf")
+@font-face
+    font-family: "RobotoCondensed-Italic"
+    src : url("../fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf")
+@font-face
+    font-family: "FontsFree-Net-Proxima-Nova-Bold"
+    src : url("../fonts/FontsFree-Net-Proxima-Nova-Bold.otf")
+@font-face
+    font-family: "Roboto-Regular"
+    src : url("../fonts/Roboto/Roboto-Regular.ttf")
+@font-face
+    font-family: "GothamBold"
+    src : url("../fonts/Gotham Bold/Gotham Bold.otf")
+
+//main styles
+
+*
+    margin: 0
+    padding: 0
+.slick-list
+    height: 660px !important
+    .slick-track
+        margin-top: 690px
+.container
+    width: 1366px
+    display: flex
+    padding: 0 115px
+    margin: 0 auto
+.change-films
+    height: 65px
+    background: #000
+    display: flex
+    align-items: center
+    font-family: 'Roboto_Condensed_Bold', sans-serif
+    .container
+        align-items: center
+        p
+            color: white
+            flex: 1
+            font-size: 30px
+        .change-img
+            margin-left: 50px
+            img
+                height: 20px
+                width: 40px
+                &:nth-child(2)
+                    margin-left: 22px
+    button
+        width: 133px
+        border: 2px solid white
+        background: #010b13
+        border-radius: 10px
+        height: 36px
+        color: white
+        cursor: pointer
+        font-weight: bold
+        margin-left: 24px
+        font-size: 21px
+body
+    header
+        font-family: 'Roboto_Condensed_Bold', sans-serif
+        display: flex
+        align-items: center
+        height: 60px
+        background: #389ef2
+        .container
+            align-items: center
+            div
+                &:nth-child(3) p, &:nth-child(4) p, &:nth-child(5) p
+                    margin-left: 10px
+            .logo
+                color: white
+                height: 42px
+                display: flex
+                align-items: center
+                img
+                    height: 33px
+                    width: 25px
+                p
+                    font-family: 'RobotoCondensed-Bold_Italic', sans-serif
+                    font-size: 25px
+                    margin-left: 13px
+                    padding-right: 12px
+                &::after
+                    content: ''
+                    height: 38px
+                    width: 2px
+                    background: #ffc107
+            .headline
+                flex-grow: 1
+                color: white
+                font-size: 14px
+                margin-left: 10px
+            .about, .sign-up, .log-in
+                display: flex
+                align-items: flex-end
+                font-size: 22px
+                color: white
+                cursor: pointer
+                .header-img
+                    width: 26px
+                    height: 26px
+                    margin-left: 45px
+    main
+        height: 560px
+        background: url('../img/mainbg.png')
+        background-position-x: center
+        background-repeat: no-repeat    
+        background-size: cover
+        display: flex
+        flex-direction: column
+        h1
+            text-align: center
+            margin-top: 130px
+            color: white
+            flex: 1
+            font-family: 'RobotoCondensed-Italic', sans-serif
+            font-size: 122px
+        .container
+            align-items: center    
+    .movies-section
+        height: 550px
+        display: flex
+        flex-direction: column
+        .list-films
+            display: flex
+            position: relative
+            overflow-x: hidden
+            flex: 1
+            .card
+                padding-top: 10px
+                width: 225px
+                margin-right: 120px
+                h3
+                    text-overflow: ellipsis
+                    white-space: nowrap
+                    overflow: hidden
+                .date
+                    margin-bottom: 10px
+                .video
+                    padding: 7px 9px 0 9px
+                    cursor: pointer
+                    background-size: cover !important
+                    background-blend-mode: darken
+                    height: 330px
+                    width: 207px
+
+                    .video-top-btns
+                        justify-content: space-between
+                        align-items: center
+                        display: flex
+                        .left-img
+                            width: 40px
+                            height: 30px
+                        .right-img
+                            width: 35px
+                            height: 38px
+                    .play-btn
+                        margin: 110px auto 0 auto 
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        img
+                            width: 24px
+                            height: 24px
+                .card-nav
+                    display: flex
+                    height: 60px
+                    position: relative
+                    .share
+                        margin-left: 10px
+                        margin-top: 33px
+                        margin-right: 26px
+                        position: absolute
+                    .gradeless, .comments, .like
+                        font-family: 'FontsFree-Net-Proxima-Nova-Bold', sans-serif
+                        margin-top: 10px
+                        display: flex
+                        flex-direction: column
+                        align-items: center
+                        position: absolute
+                    .comments
+                        left: 63px
+                    .gradeless
+                        left: 115px
+                    .like
+                        left: 172px
+                    .gradeless img, .comments img, .like img
+                        margin-top: 10px
+                    img
+                        width: 20px
+                        height: 20px
+    .list-view
+        height: 700px
+        display: flex
+        .container
+            .arrows
+                height: 600px
+                margin-left: auto
+                margin-top: 40px
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                img
+                    width: 26px
+                    height: 9px
+                    cursor: pointer
+                    &:nth-child(2)
+                        transform: rotate(180deg) 
+            .items
+                margin-top: 40px
+                .list-view-item
+                    height: 172px
+                    display: flex
+                    margin-bottom: 55px
+                    .prev-img
+                        cursor: pointer
+                        background-size: cover
+                        height: 155px
+                        width: 105px
+                        .play-btn
+                            margin: 45px auto 0 auto
+                            width: 60px
+                            height: 60px
+                            border-radius: 50%
+                            background: #0b1922 
+                            opacity: 0.3
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            img
+                                width: 23px
+                                height: 23px
+                    .rating
+                        width: 125px
+                        height: 155px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        position: relative
+                        .circle
+                            width: 55px
+                            height: 55px
+                            border-radius: 50%
+                            border: 12px solid #22ca71
+                        img
+                            width: 80px
+                            height: 80px
+                        .rank
+                            position: absolute
+                            font-family: "GothamBold"
+                            font-size: 28px
+                    
+                    .list-view-item-info
+                        font-family: 'Roboto_Condensed_Bold', sans-serif
+                        .film-name
+                            color: #389ef2
+                            font-size: 16px
+                        .details
+                            display: flex
+                            p:nth-child(1)
+                                padding-left: 0
+                        .description
+                            font-size: 18px
+                            font-family: "Roboto-Regular"
+                            color: #4b555d
+                            margin-top: 15px
+                            p
+                                width: 850px
+                        .item-nav
+                            display: flex
+                            align-items: flex-end
+                            height: 60px
+                            .share
+                                margin-right: 45px
+                            .gradeless, .comments, .like
+                                margin-right: 35px
+                                font-family: 'FontsFree-Net-Proxima-Nova-Bold', sans-serifs
+                                display: flex
+                                align-items: center
+                            .like
+                                flex: 1
+                            .gradeless img, .comments img, .like img
+                                margin-left: 8px
+                            img
+                                width: 20px
+                                height: 20px
+                        .read-more
+                            color: #389ef2
+                            font-size: 18px
+    footer
+        color: white
+        font-family: "RobotoCondensed-Italic"
+        display: flex
+        height: 180px
+        flex-direction: column
+        align-items: center
+        background: #010b13
+        h3
+            margin-top: 36px
+            font-family: "RobotoCondensed-Bold_Italic"
+            font-size: 28px
+        .info-footer
+            font-size: 16px
+            margin-top: 16px
+            margin-bottom: 18px
+        .copyright
+            font-size: 18px
+                              
+
