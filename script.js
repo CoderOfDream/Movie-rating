@@ -3,7 +3,6 @@ class Carousel {
         this.imgArrPrev = ['svg/movie-type.svg', 'svg/products/actions/gradelessWhite.svg', 'svg/play-button.svg']
         this.imgArrNav = ['svg/products/actions/share.svg', 'svg/products/actions/comment.svg', 'svg/products/actions/gradeless.svg', 'svg/products/actions/heart.svg']
         this.newCards()
-        this.filter('first-filter', 'list')
         this.moveSlider()
         this.listViewItems()
 
@@ -13,11 +12,11 @@ class Carousel {
         fetch('https://api.myjson.com/bins/p2dnz')
             .then(json => json.json())
             .then(cards => {
+
                 const wrapper = document.querySelector('.list-films')
 
-
                 cards.forEach(card => {
-                    const newCard = document.createElement('div')
+                    const newCard = document.createElement('li')
                     newCard.classList.add('card')
                     newCard.setAttribute('filter', `${card.type} list`)
                     wrapper.appendChild(newCard)
@@ -58,10 +57,7 @@ class Carousel {
                     playImg.src = this.imgArrPrev[2]
                     playBtn.appendChild(playImg)
 
-
                     newCard.appendChild(video)
-
-
 
                     const cardNav = document.createElement('div')
                     cardNav.classList.add('card-nav')
@@ -112,42 +108,57 @@ class Carousel {
 
                 })
             })
-
-
+            .then(() => this.filter('first-filter', 'list'))
     }
 
-    filter(filter, key) {
-        let content
+    filter(filter, key, slider) {
+        let content = $(`.${filter} > li`)
+
         $(`button[filter="Movie ${key}"]`).click(function () {
             if ($(this).attr('val') == 'off') {
-                $('button[filter]').attr('val', 'off');
+                $('button[filter]').attr('val', 'off')
                 $(this).attr('val', 'on')
-                $(`.${filter} > div`).hide()
-                $(`.${filter} > div[filter="Movie ${key}"]`).show()
+                $(`.${filter} > li`).remove()
+                for (let i = 0; i < content.length; i++) {
+                    if (content[i].getAttribute('filter') === `Movie ${key}`) {
+                        $(`.${filter}`).append(content[i])
+                    }
+                }
+                (filter === 'items') ? slider.reloadSlider() : false
             }
         })
 
         $(`button[filter="TV-Show ${key}"]`).click(function () {
-            
+
             if ($(this).attr('val') == 'off') {
-                $('button[filter]').attr('val', 'off');
+                $('button[filter]').attr('val', 'off')
                 $(this).attr('val', 'on')
-                $(`.${filter} > div`).hide()
-                $(`.${filter} > div[filter="TV-Show ${key}"]`).show();
+                $(`.${filter} > li`).remove()
+                for (let i = 0; i < content.length; i++) {
+                    if (content[i].getAttribute('filter') === `TV-Show ${key}`) {
+                        $(`.${filter}`).append(content[i])
+                    }
+                }
+                (filter === 'items') ? slider.reloadSlider() : false
             }
         })
 
         $(`button[filter="all ${key}"]`).click(function () {
             if ($(this).attr('val') == 'off') {
-                $('button[filter]').attr('val', 'off');
-                $(this).attr('val', 'on');
-                $(`.${filter} > div`).show();
+                $('button[filter]').attr('val', 'off')
+                $(this).attr('val', 'on')
+                for (let i = 0; i < content.length; i++) {
+                    $(`.${filter}`).append(content[i])
+                }
             }
+            (filter === 'items') ? slider.reloadSlider() : false
         })
+
+
     }
 
     moveSlider() {
-        const slider = document.querySelector('.list-films');
+        const slider = document.querySelector('.list-films')
         let isDown = false
         let startX
         let scrollLeft
@@ -157,22 +168,22 @@ class Carousel {
             slider.classList.add('active')
             startX = e.pageX - slider.offsetLeft
             scrollLeft = slider.scrollLeft
-        });
+        })
         slider.addEventListener('mouseleave', () => {
             isDown = false
             slider.classList.remove('active')
-        });
+        })
         slider.addEventListener('mouseup', () => {
             isDown = false
             slider.classList.remove('active')
-        });
+        })
         slider.addEventListener('mousemove', (e) => {
             if (!isDown) return
             e.preventDefault()
             const x = e.pageX - slider.offsetLeft
             const walk = (x - startX) * 0.6
             slider.scrollLeft = scrollLeft - walk
-        });
+        })
     }
 
     listViewItems() {
@@ -182,15 +193,13 @@ class Carousel {
             .then(json => json.json())
             .then(cards => {
                 cards.forEach(card => {
-                    const newItem = document.createElement('div')
+                    const newItem = document.createElement('li')
                     newItem.classList.add('list-view-item')
                     newItem.setAttribute('filter', `${card.type} most`)
-
 
                     const prevImg = document.createElement('div')
                     prevImg.classList.add('prev-img')
                     prevImg.style.backgroundImage = `url(${card.poster})`
-
 
                     const playBtn = document.createElement('div')
                     playBtn.classList.add('play-btn')
@@ -307,7 +316,6 @@ class Carousel {
                     readMore.innerHTML = 'Read more'
                     readMore.href = '#'
 
-
                     itemNav.appendChild(comments)
                     itemNav.appendChild(gradeless)
                     itemNav.appendChild(like)
@@ -315,19 +323,29 @@ class Carousel {
                     wrapper.appendChild(newItem)
                 })
             })
-            .then(() => this.filter('slick-track', 'most'))
             .then(() => this.listViewSlider())
+            .then((slider) => this.filter('items', 'most', slider))
     }
 
     listViewSlider() {
-        $('.items').slick({
-            vertical: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            verticalSwiping: true,
-            nextArrow: $('.next'),
-            prevArrow: $('.prev')
-        });
+        const slider = $('.items').bxSlider({
+            mode: 'vertical',
+            minSlides: 3,
+            slideMargin: 0,
+            moveSlides: 1,
+            controls: false,
+            pager: false,
+            infiniteLoop: false,
+            captions: true
+        })
+        $('.next').click(function () {
+            slider.goToNextSlide()
+        })
+
+        $('.prev').click(function () {
+            slider.goToPrevSlide()
+        })
+        return slider
     }
 }
 

@@ -33,12 +33,17 @@
   padding: 0;
 }
 
-.slick-list {
+.bx-viewport {
   height: 660px !important;
 }
 
-.slick-list .slick-track {
-  margin-top: 690px;
+.bx-wrapper {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+li {
+  list-style: none;
 }
 
 .container {
@@ -100,6 +105,12 @@
   font-weight: bold;
   margin-left: 24px;
   font-size: 21px;
+}
+
+.change-films button:focus {
+  background: white;
+  color: #010b13;
+  outline: none;
 }
 
 body header {
@@ -410,20 +421,17 @@ body .list-view .container .items .list-view-item .prev-img .play-btn {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #0b1922;
-  opacity: 0.3;
+  background: url("../svg/ellipse.png");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 body .list-view .container .items .list-view-item .prev-img .play-btn img {
+  margin-left: 20px;
   width: 23px;
   height: 23px;
 }
@@ -534,6 +542,10 @@ body .list-view .container .items .list-view-item .list-view-item-info .item-nav
 body .list-view .container .items .list-view-item .list-view-item-info .read-more {
   color: #389ef2;
   font-size: 18px;
+}
+
+body .list-view .container .items .list-view-item .list-view-item-info .read-more:hover {
+  color: #8eccff;
 }
 
 body footer {
